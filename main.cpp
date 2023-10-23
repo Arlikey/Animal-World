@@ -1,4 +1,7 @@
 #include <iostream>
+#include "Animal_World.h"
+#include "Africa.h"
+#include "North_America.h"
 using namespace std;
 
 int main() {
@@ -15,13 +18,22 @@ int main() {
 	{
 	case 1:
 		continent = new Africa();
+		continent->Add_Herbivores();
+		continent->Add_Carnivores();
 		break;
 	case 2:
 		continent = new North_America();
+		continent->Add_Herbivores();
+		continent->Add_Carnivores();
 		break;
 	default:
+		continent = nullptr;
 		break;
 	}
+
+	Animal_World animals;
+	animals.Meals_Herbivores(continent);
+	animals.Nutrition_Carnivores(continent);
 
 	delete continent;
 

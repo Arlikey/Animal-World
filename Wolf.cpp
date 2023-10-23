@@ -8,13 +8,15 @@ Wolf::Wolf(double power) {
 	this->power = power;
 }
 
-void Wolf::Eat(Herbivore* herbivore) {
+bool Wolf::Eat(Herbivore* herbivore) {
 	if (!herbivore->isAlive()) {
-		return;
+		return false;
 	}
 	if (power > herbivore->getWeight()) {
 		power += 10;
+		herbivore->Set_Life(false);
 	} else {
 		power -= 10;
 	}
+	return true;
 }

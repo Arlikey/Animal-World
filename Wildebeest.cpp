@@ -11,6 +11,10 @@ Wildebeest::Wildebeest(double weight) : Herbivore() {
 	this->weight = weight;
 }
 
+void Wildebeest::Set_Life(bool life) {
+	this->life = life;
+}
+
 void Wildebeest::Eat_Grass() {
 	if (life) weight += 10;
 }

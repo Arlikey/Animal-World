@@ -6,6 +6,6 @@ protected:
 	double power;
 public:
 	double getPower();
-	virtual void Eat(Herbivore* herbivore) = 0;
+	virtual bool Eat(Herbivore* herbivore) = 0;
 };
 

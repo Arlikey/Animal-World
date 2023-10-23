@@ -8,13 +8,15 @@ Lion::Lion(double power) {
 	this->power = power;
 }
 
-void Lion::Eat(Herbivore* herbivore) {
+bool Lion::Eat(Herbivore* herbivore) {
 	if (!herbivore->isAlive()) {
-		return;
+		return false;
 	}
 	if (power > herbivore->getWeight()) {
 		power += 10;
+		herbivore->Set_Life(false);
 	} else {
 		power -= 10;
 	}
+	return true;
 }

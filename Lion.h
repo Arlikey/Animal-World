@@ -5,6 +5,6 @@ class Lion : public Carnivore
 public:
 	Lion();
 	Lion(double power);
-	void Eat(Herbivore* herbivore);
+	bool Eat(Herbivore* herbivore);
 };
 
